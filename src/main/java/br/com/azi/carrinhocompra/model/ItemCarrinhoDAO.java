@@ -54,7 +54,6 @@ public class ItemCarrinhoDAO {
             updateHql.append(" UPDATE " + ItemCarrinho.class.getName() + " ic");
             updateHql.append(" SET ic.quantidade = " + quantidade + ", ic.valor = " + valor);
             updateHql.append(" WHERE ic.id = " + itemCarrinhoOld.getId());
-
             itemCarrinhoOld.setQuantidade(quantidade);
             itemCarrinhoOld.setValor(valor);
             entityManager.createQuery(updateHql.toString()).executeUpdate();

@@ -26,39 +26,38 @@ public class Main {
                   Inserir outro item no carrinho carrinhoOperacoes.inserirItem() ||
                   Retornar valor total do carrinho valorTotalCarrinho()
         */
-       CarrinhoOperacoes carrinhoOperacoes = new CarrinhoCompraBO();
+//       CarrinhoOperacoes carrinhoOperacoes = new CarrinhoCompraBO();
 //
-       Cliente cliente = new Cliente();
-       cliente.setNome("Zeus");
-       cliente.setCpf("077.802.481-43");
+//       Cliente cliente = new Cliente();
+//       cliente.setNome("Zeus");
+//       cliente.setCpf("077.802.481-43");
 //
-       CarrinhoCompra carrinhoCompra = carrinhoOperacoes.criarCarrinhoCompra(cliente);
+//       CarrinhoCompra carrinhoCompra = carrinhoOperacoes.criarCarrinhoCompra(cliente);
 //
-       ItemCompra itemCompra = new ItemCompra();
-       itemCompra.setDescricao("leite condensado");
-       itemCompra.setPreco(BigDecimal.valueOf(5.99));
+//       ItemCompra itemCompra = new ItemCompra();
+//       itemCompra.setDescricao("leite condensado");
+//       itemCompra.setPreco(BigDecimal.valueOf(5.99));
+//       ItemCompra itemCompra2 = new ItemCompra();
+//       itemCompra2.setDescricao("leite");
+//       itemCompra2.setPreco(BigDecimal.valueOf(4.50));
 //
-       ItemCompra itemCompra2 = new ItemCompra();
-       itemCompra2.setDescricao("leite");
-       itemCompra2.setPreco(BigDecimal.valueOf(4.50));
-
-       ItemCarrinho itemCarrinho = new ItemCarrinho();
-       itemCarrinho.setItemCompra(itemCompra);
-       itemCarrinho.setQuantidade(2);
-       itemCarrinho.mudaValor(itemCompra.getPreco());
-
-       ItemCarrinho itemCarrinho2 = new ItemCarrinho();
-       itemCarrinho2.setItemCompra(itemCompra2);
-       itemCarrinho2.setQuantidade(12);
-       itemCarrinho2.mudaValor(itemCompra2.getPreco());
+//       ItemCarrinho itemCarrinho = new ItemCarrinho();
+//       itemCarrinho.setItemCompra(itemCompra);
+//       itemCarrinho.setQuantidade(2);
+//       itemCarrinho.mudaValor(itemCompra.getPreco());
 //
-       carrinhoOperacoes.inserirItem(itemCarrinho, carrinhoCompra);
-       carrinhoOperacoes.inserirItem(itemCarrinho2, carrinhoCompra);
-
-       carrinhoOperacoes.valorTotalCarrinho(carrinhoCompra);
-
-       carrinhoOperacoes.removerItem(itemCarrinho, carrinhoCompra);
-       carrinhoOperacoes.valorTotalCarrinho(carrinhoCompra);
+//       ItemCarrinho itemCarrinho2 = new ItemCarrinho();
+//       itemCarrinho2.setItemCompra(itemCompra2);
+//       itemCarrinho2.setQuantidade(12);
+//       itemCarrinho2.mudaValor(itemCompra2.getPreco());
+//
+//       carrinhoOperacoes.inserirItem(itemCarrinho, carrinhoCompra);
+//       carrinhoOperacoes.inserirItem(itemCarrinho2, carrinhoCompra);
+//
+//       carrinhoOperacoes.valorTotalCarrinho(carrinhoCompra);
+//
+//       carrinhoOperacoes.removerItem(itemCarrinho, carrinhoCompra);
+//       carrinhoOperacoes.valorTotalCarrinho(carrinhoCompra);
 
     }
 }

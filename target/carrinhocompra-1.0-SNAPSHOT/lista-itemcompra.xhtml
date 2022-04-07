@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+    <title>Listagem de Produtos</title>
+</head>
+<body>
+
+<h3>Produtos Cadastrados</h3>
+
+<h:dataTable value="#{carrinhoController.listaItemCompra}" var="itemcompra" border="1">
+
+    <h:column>
+        <f:facet name="header">Descrição</f:facet>
+        #{itemcompra.descricao}
+    </h:column>
+
+    <h:column>
+        <f:facet name="header">Preço</f:facet>
+        #{itemcompra.preco}
+    </h:column>
+</h:dataTable>
+<h:form>
+    <h:commandButton id="back"  type="submit" action="#{carrinhoController.menuPrincipal}" value="Voltar ao menu" />
+</h:form>
+
+
+</body>
+</html>

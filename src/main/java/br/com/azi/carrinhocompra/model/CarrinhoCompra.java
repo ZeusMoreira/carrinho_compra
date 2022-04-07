@@ -39,6 +39,10 @@ public class CarrinhoCompra {
         return id;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
     public void setDataCriacao(Date dataCriacao) {
         this.dataCriacao = dataCriacao;
     }

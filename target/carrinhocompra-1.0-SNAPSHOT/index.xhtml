@@ -2,8 +2,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head />
+<h:head>
+    <title>Cadastro de Clientes</title>
+</h:head>
+
 <h:body>
-    <h:outputText value="OLA MUNDO" />
+
+    <h3>Opções</h3>
+
+    <h3>
+        <h:form>
+            <h:commandLink value="Listagem de Produtos" action="#{carrinhoController.listaProdutos}"/>
+        </h:form>
+    </h3>
+
+    <h3>
+        <h:form>
+            <h:commandLink value="Cadastro de Produtos" action="#{carrinhoController.cadastroItemCompra}"/>
+        </h:form>
+    </h3>
+
+    <h3>
+        <h:form>
+            <h:commandLink value="Cadastro de Clientes" action="#{carrinhoController.cadastroClientes}"/>
+        </h:form>
+    </h3>
+
+    <h3>
+        <h:form>
+            <h:commandLink value="Listagem de Clientes" action="#{carrinhoController.listaClientes}"/>
+        </h:form>
+    </h3>
+
+    <h3>
+        <h:form>
+            <h:commandLink value="Produtos para Clientes" action="#{carrinhoController.adicionarCarrinho}"/>
+        </h:form>
+    </h3>
+
+    <h3>
+        <h:form>
+            <h:commandLink value="Lista Carrinho Clientes" action="#{carrinhoController.listaCarrinhoCliente}"/>
+        </h:form>
+    </h3>
+
 </h:body>
 </html>

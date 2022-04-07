@@ -36,6 +36,18 @@ public class ItemCompraDAO {
         return entityManager.find(ItemCompra.class, descricao);
     }
 
+    public List<ItemCompra> getItensCompra(){
+        List<ItemCompra> itemCompras = null;
+        try {
+            entityManager.getTransaction().begin();
+            itemCompras = entityManager.createQuery(" SELECT itemCompra FROM ItemCompra itemCompra ", ItemCompra.class).getResultList();
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        return itemCompras;
+    }
 
     public void persist(ItemCompra ItemCompra) {
         try {

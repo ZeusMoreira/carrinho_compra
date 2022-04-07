@@ -1,10 +1,11 @@
 package br.com.azi.carrinhocompra.model;
 
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.math.BigDecimal;
+import java.util.List;
 
 public class ClienteDAO {
 
@@ -34,6 +35,19 @@ public class ClienteDAO {
 
     public Cliente getByCpf(final String cpf) {
         return entityManager.find(Cliente.class, cpf);
+    }
+
+    public List<Cliente> getClients(){
+        List<Cliente> clientes = null;
+        try {
+            entityManager.getTransaction().begin();
+            clientes = entityManager.createQuery(" SELECT cliente FROM Cliente cliente ", Cliente.class).getResultList();
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        return clientes;
     }
 
     public void persist(Cliente cliente) {

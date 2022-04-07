@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Cadastro de Produtos</title>
+</h:head>
+
+<h:body>
+
+    <h3>Formulário de Cadastro de Produtos</h3>
+
+    <h3>
+        <h:form>
+            <h:commandLink value="Listagem de Produtos" action="#{carrinhoController.listaProdutos}"/>
+        </h:form>
+    </h3>
+
+    <h4><h:outputLabel id="oplMensagem" value="#{carrinhoController.msg}"/></h4>
+
+    <h:form>
+        <table>
+            <tr>
+                <td><h:outputText id="ldesc" value="Descrição:" /></td>
+                <td><h:inputText id="tdesc" value="#{carrinhoController.itemCompra.descricao}"/></td>
+            </tr>
+            <tr>
+                <td><h:outputText id="lpreco" value="Preço:" /></td>
+                <td><h:inputText id="tpreco" value="#{carrinhoController.itemCompra.preco}"/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h:commandButton id="submit"  type="submit" action="#{carrinhoController.criarItemCompra}" value="Salvar" />
+                </td>
+            </tr>
+        </table>
+        <h:commandButton id="back"  type="submit" action="#{carrinhoController.menuPrincipal}" value="Voltar ao menu" />
+    </h:form>
+
+
+</h:body>
+</html>

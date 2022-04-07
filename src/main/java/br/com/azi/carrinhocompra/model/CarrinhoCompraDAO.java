@@ -36,6 +36,22 @@ public class CarrinhoCompraDAO {
         return entityManager.find(CarrinhoCompra.class, id);
     }
 
+    public CarrinhoCompra getByCliente(Cliente cliente) {
+        CarrinhoCompra carrinhoCompra = null;
+        try {
+            entityManager.getTransaction().begin();
+            carrinhoCompra = entityManager.createQuery(
+                    "SELECT cr from CarrinhoCompra cr join cr.cliente cl where cl.cpf = :cpf and cr.cliente = :cliente ", CarrinhoCompra.class)
+                    .setParameter("cpf", cliente.getCpf())
+                    .setParameter("cliente", cliente).getSingleResult();
+            entityManager.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            entityManager.getTransaction().rollback();
+        }
+        return carrinhoCompra;
+    }
+
     public void persist(CarrinhoCompra carrinhoCompra) {
         try {
             entityManager.getTransaction().begin();

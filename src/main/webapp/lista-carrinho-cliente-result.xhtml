@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<head>
+    <title>Listagem de Produtos</title>
+</head>
+<h:body>
+
+<h3>Carrinho Cliente</h3>
+
+<h4><h:outputLabel id="oplMensagem" value="#{carrinhoController.msg}"/></h4>
+
+<h:dataTable value="#{carrinhoController.carrinhoCliente}" var="itemcarrinho" border="1">
+    <h:column>
+        <f:facet name="header">Descrição</f:facet>
+        #{itemcarrinho.itemDescricao}
+    </h:column>
+
+    <h:column>
+        <f:facet name="header">Quantidade</f:facet>
+        #{itemcarrinho.quantidade}
+    </h:column>
+
+    <h:column>
+        <f:facet name="header">Preço</f:facet>
+        #{itemcarrinho.itemCompra.preco}
+    </h:column>
+
+    <h:column>
+        <f:facet name="header">Valor</f:facet>
+        #{itemcarrinho.valor}
+    </h:column>
+
+
+    <h:column>
+        <f:facet name="header"> </f:facet><h:form><h:commandLink action="#{carrinhoController.excluirProduto(itemcarrinho)}" value="Excluir"/></h:form>
+    </h:column>
+</h:dataTable>
+<h:form>
+    <h:commandButton id="back"  type="submit" action="#{carrinhoController.menuPrincipal}" value="Voltar ao menu" />
+</h:form>
+
+
+</h:body>
+</html>
